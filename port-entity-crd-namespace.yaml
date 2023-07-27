@@ -15,9 +15,12 @@ spec:
       - name: Entity ID
         type: string
         jsonPath: .spec.identifier
-      - name: Data
+      - name: Properties
         type: string
-        jsonPath: .spec.data
+        jsonPath: .spec.properties
+      - name: Relations
+        type: string
+        jsonPath: .spec.relations
     schema:
       openAPIV3Schema:
         type: object
@@ -29,7 +32,10 @@ spec:
                 type: string
               identifier:
                 type: string
-              data:
+              properties:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+              relations:
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
   scope: Namespaced
