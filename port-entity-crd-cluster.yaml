@@ -38,6 +38,9 @@ spec:
               relations:
                 type: object
                 x-kubernetes-preserve-unknown-fields: true
+            required:
+              - blueprint
+              - identifier
   scope: Cluster
   names:
     plural: clusterentities
